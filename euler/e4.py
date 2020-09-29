@@ -14,4 +14,5 @@ def longestPalindrome(m=100, n=100):
     return max(palindrome)
 
 
-print(longestPalindrome())
+if __name__ == "__main__":
+    print(longestPalindrome())
