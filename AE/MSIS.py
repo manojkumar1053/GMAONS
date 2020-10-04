@@ -1,3 +1,5 @@
+# O(n2) | O(n2)
+
 def maxSumIncreasingSubsequence(array):
     # Write your code here.
     if len(array) == 0:
