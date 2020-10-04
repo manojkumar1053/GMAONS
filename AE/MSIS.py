@@ -22,4 +22,4 @@ def buildSumarray(array, seq, currentIdx):
     while currentIdx is not None:
         seqx.append(array[currentIdx])
         currentIdx = seq[currentIdx]
-    return seqx
+    return list(reversed(seqx))
