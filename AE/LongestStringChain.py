@@ -9,7 +9,8 @@ def longestStringChain(strings):
     sortedString = sorted(strings, key=len)
     for string in sortedString:
         findLongestStringChain(string, stringChains)
-        pass
+
+    return buildLongestStringChain(strings, stringChains)
 
 
 def findLongestStringChain(string, stringChains):
@@ -28,8 +29,22 @@ def tryUpdateLongestStringChain(currentString, smallerString, stringChains):
     smallerStringChainLength = stringChains[smallerString]["maxChainLength"]
     currentStringChainLength = stringChains[currentString]["maxChainLength"]
 
-    if smallerStringChainLength +1 >=currentStringChainLength:
-        stringChains[currentString]["maxChainLength"] = smallerStringChainLength+1
+    if smallerStringChainLength + 1 >= currentStringChainLength:
+        stringChains[currentString]["maxChainLength"] = smallerStringChainLength + 1
         stringChains[currentString]["nextString"] = smallerString
 
 
+def buildLongestStringChain(strings, stringChains):
+    maxChainLength = 0
+    chainStartingString = ""
+    for string in strings:
+        if stringChains[string]["maxChainLength"] > maxChainLength:
+            maxChainLength = stringChains[string]["maxChainLength"]
+            chainStartingString = string
+
+    ourLongestStringChain = []
+    currentString = chainStartingString
+    while currentString != "":
+        ourLongestStringChain.append(currentString)
+        currentString = stringChains[currentString]["nextString"]
+    return [] if len(ourLongestStringChain) == 1 else ourLongestStringChain
