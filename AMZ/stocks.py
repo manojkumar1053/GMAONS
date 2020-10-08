@@ -1,0 +1,2 @@
+def stocks(array):
+    pass
