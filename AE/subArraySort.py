@@ -17,6 +17,7 @@ def subarraySort(array):
     return [subarrayLeftIdx, subarrayRightIdx]
 
 
+# --------------------------------------------------------------
 def isOutOfOrder(i, num, array):
     if i == 0:
         return num > array[i + 1]
