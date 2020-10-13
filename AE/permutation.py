@@ -16,3 +16,4 @@ def permutationHelper(array, currentPermutation, permutations):
 
 
 print(getPermutations([1,2]))
+#-----------------
