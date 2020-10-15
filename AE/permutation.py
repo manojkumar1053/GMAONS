@@ -14,6 +14,5 @@ def permutationHelper(array, currentPermutation, permutations):
             newPermutation = currentPermutation + [array[i]]
             permutationHelper(newArray, newPermutation, permutations)
 
-
 print(getPermutations([1,2]))
 #-----------------

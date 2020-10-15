@@ -12,6 +12,7 @@ def getLocations(string, substring):
             startIdx = nextIdx + 1
         else:
             break
+    print("getLC", locations)
     return locations
 
 
@@ -19,7 +20,9 @@ def collapse(locations):
     if not len(locations):
         return locations
     newLocations = [locations[0]]
+    print("newlx", newLocations)
     previous = newLocations[0]
+    print("prex", previous)
     for i in range(1, len(locations)):
         current = locations[i]
         if current[0] <= previous[1]:
@@ -27,6 +30,7 @@ def collapse(locations):
         else:
             newLocations.append(current)
             previous = current
+    print(newLocations)
     return newLocations
 
 
@@ -50,3 +54,10 @@ def underScorify(string, locations):
     elif stringIdx < len(string):
         finalChars.append(string[stringIdx:])
     return "".join(finalChars)
+
+
+print(underscorifySubstring("testthis is a testtest to see if testestest it works", "test"))
+
+ls = [[0, 4], [14, 18], [18, 22], [33, 37], [36, 40], [39, 43]]
+print(ls[0])
+print("pre", ls[0][0])
