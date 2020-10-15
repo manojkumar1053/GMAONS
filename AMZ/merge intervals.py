@@ -25,6 +25,9 @@ Example 2:
 Input: intervals = [[1,4],[4,5]]
 Output: [[1,5]]
 Explanation: Intervals [1,4] and [4,5] are considered overlapping.
+
+Input: intervals = [[1, 4], [0, 4]]
+Output: [[1,4]]
 """
 
 #########################################################################
