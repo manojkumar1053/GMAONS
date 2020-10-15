@@ -11,7 +11,7 @@ def mergeIntervals(newInterval):
             newIntervalX.append(current)
             previous = current
     return newIntervalX
-#########################################################################
+##################################################################################################################################################
 """
 Given a collection of intervals, merge all overlapping intervals.
 
@@ -29,8 +29,7 @@ Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 Input: intervals = [[1, 4], [0, 4]]
 Output: [[1,4]]
 """
-
-#########################################################################
+##################################################################################################################################################
 Intervals = [[0, 4], [14, 18], [18, 22], [33, 37], [36, 40], [39, 43]]
 print("actual Intevals", Intervals)
 print(mergeIntervals(Intervals))
