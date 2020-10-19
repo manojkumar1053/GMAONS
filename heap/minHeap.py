@@ -26,7 +26,7 @@ class MinHeap:
 
     def peek(self):
         # Write your code here.
-        pass
+        return True
 
     def remove(self):
         self.swap(0, len(self.heap) - 1, self.heap)
@@ -40,3 +40,4 @@ class MinHeap:
 
     def swap(self, i, j, heap):
         heap[i], heap[j] = heap[j], heap[i]
+
