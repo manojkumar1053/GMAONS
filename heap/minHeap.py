@@ -7,31 +7,39 @@ class MinHeap:
         # Write your code here.
         pass
 
-    def siftDown(self, currentIdx, endIdx, heap):
+    def siftDown(self, currentIndex, endIdx, heap):
         # Write your code here.
-        childOneIdx = currentIdx * 2 + 1
+        childOneIdx = currentIndex * 2 + 1
         while childOneIdx <= endIdx:
-            childTwoIdx = currentIdx * 2 + 2 if childOneIdx * 2 + 2 <= endIdx else -1
-            if childTwoIdx != -1 and heap[childTwoIdx] < heap[childOneIdx]:
-                pass
+            childTwoIdx = currentIndex * 2 + 2 if currentIndex * 2 + 2 <= endIdx else -1
+            if childTwoIdx != -1 and heap[childTwoIdx] <= heap[childOneIdx]:
+                idxSwap = childTwoIdx
+            else:
+                idxSwap = childOneIdx
+            if heap[idxSwap] < heap[currentIndex]:
+                self.swap(currentIndex, idxSwap, self.heap)
+                currentIndex = idxSwap
+                childOneIdx = currentIndex * 2 + 1
+            else:
+                break
 
-
-    def siftUp(self, currentIdx, heap):
-        # Write your code here.
-        parentIdx = (currentIdx - 1) // 2
-        while currentIdx > 0 and heap[currentIdx] < heap[parentIdx]:
-            self.swap(currentIdx, parentIdx, heap)
-            currentIdx = parentIdx
-            parentIdx = (currentIdx - 1) // 2
+    def siftUp(self, currentIndex, heap):
+        parentIdx = (currentIndex - 1) // 2
+        while currentIndex > 0 and heap[currentIndex] < heap[parentIdx]:
+            self.swap(currentIndex, parentIdx, heap)
+            currentIndex = parentIdx
+            parentIdx = (currentIndex - 1) // 2
 
     def peek(self):
         # Write your code here.
-        return True
+        pass
 
     def remove(self):
-        self.swap(0, len(self.heap) - 1, self.heap)
-        valueToRempve = self.heap.pop()
+        # Write your code here.
+        self.swap(0, len(self.heap), self.heap)
+        valueToRemove = self.heap.pop()
         self.siftDown(0, len(self.heap) - 1, self.heap)
+        return valueToRemove
 
     def insert(self, value):
         # Write your code here.
@@ -40,4 +48,3 @@ class MinHeap:
 
     def swap(self, i, j, heap):
         heap[i], heap[j] = heap[j], heap[i]
-
