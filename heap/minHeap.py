@@ -5,7 +5,10 @@ class MinHeap:
 
     def buildHeap(self, array):
         # Write your code here.
-        pass
+        firstParentIdx = (len(array) - 2) // 2
+        for currentIdx in reversed(range(firstParentIdx)):
+            self.siftDown(currentIdx, len(array) - 1, array)
+        return array
 
     def siftDown(self, currentIndex, endIdx, heap):
         # Write your code here.
@@ -32,7 +35,7 @@ class MinHeap:
 
     def peek(self):
         # Write your code here.
-        pass
+        return self.heap(0)
 
     def remove(self):
         # Write your code here.

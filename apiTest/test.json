@@ -1,0 +1,21 @@
+[
+  {
+    "name": "TEST: Test API URL",
+    "verb": "GET",
+    "endpoint": "v1/accounts/",
+    "host": "http://interview.wpengine.io/"
+  },
+
+    {
+    "name": "TEST: Get a Single User",
+    "verb": "GET",
+    "endpoint": "v1/accounts/314159",
+    "host": "http://interview.wpengine.io/"
+  },
+   {
+    "name": "TEST: Test 404 Response with Wrong End Point",
+    "verb": "GET",
+    "endpoint": "v1/accountss/",
+    "host": "http://interview.wpengine.io/"
+  }
+]
