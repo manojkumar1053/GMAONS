@@ -5,17 +5,49 @@
     "endpoint": "v1/accounts/",
     "host": "http://interview.wpengine.io/"
   },
-
-    {
+  {
     "name": "TEST: Get a Single User",
     "verb": "GET",
     "endpoint": "v1/accounts/314159",
     "host": "http://interview.wpengine.io/"
   },
-   {
+  {
     "name": "TEST: Test 404 Response with Wrong End Point",
     "verb": "GET",
     "endpoint": "v1/accountss/",
     "host": "http://interview.wpengine.io/"
+  },
+  {
+    "name": "TEST: Add a new user",
+    "verb": "POST",
+    "endpoint": "v1/accounts/",
+    "host": "http://interview.wpengine.io/",
+    "payload": {
+      "account_id": -20000,
+      "status": "good",
+      "created_on": "2020-10-10"
+    }
+  },
+  {
+    "name": "TEST: Add a Existing User",
+    "verb": "POST",
+    "endpoint": "v1/accounts/",
+    "host": "http://interview.wpengine.io/",
+    "payload": {
+      "account_id": "20000000",
+      "status": "good",
+      "created_on": "2020-10-10"
+    }
+  },
+    {
+    "name": "TEST: Add a Existing User",
+    "verb": "HEAD",
+    "endpoint": "v1/accounts/",
+    "host": "http://interview.wpengine.io/",
+    "payload": {
+      "account_id": "20000000",
+      "status": "good",
+      "created_on": "2020-10-10"
+    }
   }
 ]
